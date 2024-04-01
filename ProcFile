@@ -1,1 +1,0 @@
-web: java -jar build/install/com.example.borutoserverog/bin/com.example.borutoserverog.jar

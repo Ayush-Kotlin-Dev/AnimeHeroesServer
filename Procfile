@@ -1,0 +1,1 @@
+web :build/install/com.example.borutoserverog/bin/com.example.borutoserverog
