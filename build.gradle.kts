@@ -1,4 +1,3 @@
-
 val ktorVersion: String by project
 val kotlinVersion: String by project
 val logbackVersion: String by project
@@ -15,7 +14,6 @@ version = "0.0.1"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
-
 
     tasks.create("stage"){
         dependsOn("installDist")
@@ -40,4 +38,13 @@ dependencies {
     implementation("io.insert-koin:koin-ktor:$koinVersion")
     // SLF4J Logger
     implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
+}
+
+tasks.register<Jar>("fatJar") {
+    manifest {
+        attributes["Main-Class"] = "io.ktor.server.netty.EngineMain"
+    }
+    from(*configurations.runtimeClasspath.get().filter { it.exists() }.map { if (it.isDirectory) it else zipTree(it) }.toTypedArray())
+    with(tasks.getByName("jar") as CopySpec)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
