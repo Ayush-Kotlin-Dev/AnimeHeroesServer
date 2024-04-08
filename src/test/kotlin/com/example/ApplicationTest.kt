@@ -174,10 +174,7 @@ class ApplicationTest {
             PREVIOUS_PAGE_KEY to prevPage,
             NEXT_PAGE_KEY to nextPage
         )
-
     }
-
-
 }
 
 
