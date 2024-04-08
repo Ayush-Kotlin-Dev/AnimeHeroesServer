@@ -18,12 +18,10 @@ class HeroRepositoryImpl : HeroRepository {
         )
     }
 
-
-
     override val page1 = listOf(
         Hero(
             id = 1,
-            name = "Sasuke",
+            name = "Sasukee",
             image = "/images/sasuke.jpg",
             about = "Sasuke Uchiha (うちはサスケ, Uchiha Sasuke) is one of the last surviving members of Konohagakure's Uchiha clan. After his older brother, Itachi, slaughtered their clan, Sasuke made it his mission in life to avenge them by killing Itachi. He is added to Team 7 upon becoming a ninja and, through competition with his rival and best friend, Naruto Uzumaki.",
             rating = 5.0,
@@ -401,37 +399,32 @@ class HeroRepositoryImpl : HeroRepository {
     )
 
     override suspend fun getAllHeroes(page: Int): ApiResponse {
-       return ApiResponse(
-           success = true,
-           message = "Heroes fetched successfully",
-           prevPage = calculatePage(page)[PREVIOUS_PAGE_KEY],
-           nextPage = calculatePage(page)[NEXT_PAGE_KEY],
-           heroes = heroes[page]!!,
-           lastUpdated = System.currentTimeMillis()
-       )
+        return ApiResponse(
+            success = true,
+            message = "ok",
+            prevPage = calculatePage(page = page)[PREVIOUS_PAGE_KEY],
+            nextPage = calculatePage(page = page)[NEXT_PAGE_KEY],
+            heroes = heroes[page]!!,
+            lastUpdated = System.currentTimeMillis()
+        )
     }
 
-    private fun calculatePage(page : Int): Map<String, Int?>{
+    private fun calculatePage(page: Int): Map<String, Int?> {
         var prevPage: Int? = page
-        var nextPage: Int? = page + 1
-
-        if(page in 1..4){
+        var nextPage: Int? = page
+        if (page in 1..4) {
             nextPage = nextPage?.plus(1)
         }
-        if(page in 2..5){
+        if (page in 2..5) {
             prevPage = prevPage?.minus(1)
         }
-        if(page == 1){
+        if (page == 1) {
             prevPage = null
         }
-        if(page == 5){
+        if (page == 5) {
             nextPage = null
         }
-        return mapOf(
-            PREVIOUS_PAGE_KEY to prevPage,
-            NEXT_PAGE_KEY to nextPage
-        )
-
+        return mapOf(PREVIOUS_PAGE_KEY to prevPage, NEXT_PAGE_KEY to nextPage)
     }
 
     override suspend fun searchHeroes(name: String?): ApiResponse {
@@ -457,5 +450,4 @@ class HeroRepositoryImpl : HeroRepository {
             emptyList()
         }
     }
-
 }
