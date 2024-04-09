@@ -21,7 +21,7 @@ class HeroRepositoryImpl : HeroRepository {
     override val page1 = listOf(
         Hero(
             id = 1,
-            name = "Sasukee",
+            name = "Sasuke ",
             image = "/images/sasuke.jpg",
             about = "Sasuke Uchiha (うちはサスケ, Uchiha Sasuke) is one of the last surviving members of Konohagakure's Uchiha clan. After his older brother, Itachi, slaughtered their clan, Sasuke made it his mission in life to avenge them by killing Itachi. He is added to Team 7 upon becoming a ninja and, through competition with his rival and best friend, Naruto Uzumaki.",
             rating = 5.0,
@@ -334,7 +334,7 @@ class HeroRepositoryImpl : HeroRepository {
     override val page5 = listOf(
         Hero(
             id = 13,
-            name = "Code",
+            name = "Code Vaibhav",
             image = "/images/code.jpg",
             about = "Code (コード, Kōdo) is the last active Inner from Kara. Carrying Isshiki Ōtsutsuki's legacy within him, he inherits the Ōtsutsuki Clan's will to become a Celestial Being and continually evolve. At the time Kawaki was brought to Kara, Code was one of fifteen candidates in Jigen and Amado's Ōtsutsuki ritual to screen for a Kāma vessel for Isshiki. Only Kawaki survived to become an actual vessel.",
             rating = 4.8,
