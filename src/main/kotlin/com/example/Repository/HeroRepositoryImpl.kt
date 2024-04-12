@@ -342,12 +342,13 @@ class HeroRepositoryImpl : HeroRepository {
             month = "Jan",
             day = "1st",
             family = listOf(
-                "Unknown"
+                "Chandra Prakash"
             ),
             abilities = listOf(
                 "White Karma",
                 "Transformation",
-                "Genjutsu"
+                "Genjutsu",
+"💦✊🏻"
             ),
             natureTypes = listOf(
                 "Unknown"
@@ -363,7 +364,7 @@ class HeroRepositoryImpl : HeroRepository {
             month = "Jan",
             day = "1st",
             family = listOf(
-                "Chandra Prakash Khare"
+                "Unknown"
             ),
             abilities = listOf(
                 "Science",
